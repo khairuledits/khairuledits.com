@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="id" class="gate-locked">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#111111">
+  <title>Admin Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <header class="adm-header">
+    <div class="adm-brand">KHAIRUL<span>.</span> <small>ADMIN</small></div>
+    <div class="adm-status" id="status" role="status" aria-live="polite"></div>
+    <div class="adm-actions">
+      <button type="button" class="btn" id="btn-preview" title="Buka situs dengan draf ini">Pratinjau ↗</button>
+      <button type="button" class="btn btn-light" id="btn-save" title="Tulis ke portfolio-data.js">Simpan ke berkas</button>
+      <details class="adm-more">
+        <summary class="btn" aria-label="Aksi lain">⋯</summary>
+        <div class="adm-menu">
+          <button type="button" id="btn-download">Unduh portfolio-data.js</button>
+          <button type="button" id="btn-import">Impor berkas data…</button>
+          <button type="button" id="btn-discard">Buang draf, muat ulang berkas</button>
+          <button type="button" id="btn-change-pin">Ganti PIN admin…</button>
+          <button type="button" id="btn-lock">Kunci admin</button>
+        </div>
+      </details>
+    </div>
+  </header>
+
+  <div class="adm-notice" id="notice" hidden></div>
+
+  <nav class="adm-tabs" id="tabs" aria-label="Bagian">
+    <button type="button" data-tab="projects" class="active">Proyek <span data-count="projects"></span></button>
+    <button type="button" data-tab="categories">Kategori <span data-count="categories"></span></button>
+    <button type="button" data-tab="services">Layanan <span data-count="services"></span></button>
+    <button type="button" data-tab="testimonials">Testimoni <span data-count="testimonials"></span></button>
+    <button type="button" data-tab="identity">Identitas</button>
+    <button type="button" data-tab="social">Kontak</button>
+  </nav>
+
+  <main class="adm-main" id="panel"></main>
+
+  <dialog class="adm-dialog" id="dialog">
+    <form method="dialog" id="dialog-form" novalidate>
+      <header><h2 id="dialog-title"></h2><button type="button" class="icon-btn" id="dialog-x" aria-label="Tutup">×</button></header>
+      <div class="dialog-body" id="dialog-body"></div>
+      <footer>
+        <button type="button" class="btn" id="dialog-cancel">Batal</button>
+        <button type="submit" class="btn btn-light" id="dialog-ok">Simpan</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <input type="file" id="file-import" accept=".js,.json,application/json,text/javascript" hidden>
+  <div class="adm-toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="shared.js"></script>
+  <script src="portfolio-data.js"></script>
+  <script src="admin-config.js"></script>
+  <script src="admin-gate.js"></script>
+  <script src="admin.js"></script>
+</head>
+<body>
+    <h1>live server</h1>
+</body>
+</html>
